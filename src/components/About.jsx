@@ -72,7 +72,7 @@ const About = () => {
                 <p className="text-white font-medium">Clean & Scalable</p>
               </div>
 
-              {/* 2. පින්තූරය ඇතුළත් කරන කොටස මෙන්න */}
+              
               <div className="bg-[#111] p-6 rounded-3xl border border-gray-900 hover:border-[#deff9a]/30 transition-colors h-48 flex items-center justify-center overflow-hidden">
                 <img 
                   src={myLogo} 
