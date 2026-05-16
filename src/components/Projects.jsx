@@ -92,7 +92,7 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-extrabold tracking-tight uppercase"
           >
-            Featured <br/> <span className="text-[#deff9a]">Projects.</span>
+            Featured  <span className="text-[#deff9a]">Projects.</span>
           </motion.h2>
           <p className="text-gray-500 mt-6 font-light text-lg max-w-2xl mx-auto">
             A showcase of my full-stack applications, mobile developments, and ongoing innovations.
