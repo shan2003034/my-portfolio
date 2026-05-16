@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 import UpcomingProjectCard from "./UpcomingProjectCard";
 
 const Projects = () => {
- 
+
   const [visibleCount, setVisibleCount] = useState(6);
 
   // 1. Completed Projects Data
@@ -12,18 +12,18 @@ const Projects = () => {
     {
       title: "Leafy Lane",
       description: "An organic food e-commerce platform featuring a native Android application and a robust enterprise-level backend. Designed to connect users with fresh, organic products seamlessly.",
-      image: "", 
+      image: "",
       techStack: ["Android (Java)", "Spring Boot", "MySQL", "Hibernate"],
       githubLinks: [
         { name: "Frontend Repo", url: "#" },
         { name: "Backend Repo", url: "#" }
       ],
-      liveLink: "" 
+      liveLink: ""
     },
     {
       title: "Zap Chat",
       description: "A real-time cross-platform chat application providing instant messaging capabilities. Features a smooth UI and reliable backend infrastructure for real-time data sync.",
-      image: "", 
+      image: "",
       techStack: ["React Native", "Java", "Hibernate"],
       githubLinks: [{ name: "GitHub", url: "#" }],
       liveLink: ""
@@ -31,12 +31,12 @@ const Projects = () => {
     {
       title: "Burger House",
       description: "A comprehensive desktop application designed for managing a burger shop's daily operations, including billing, Jasper reports, and barcode generation.",
-      image: "", 
+      image: "",
       techStack: ["Java (Desktop)", "MySQL", "Jasper Reports"],
       githubLinks: [{ name: "GitHub", url: "#" }],
       liveLink: ""
     },
-    
+
     {
       title: "Portfolio Website",
       description: "My personal portfolio website designed with React and Tailwind CSS.",
@@ -75,7 +75,7 @@ const Projects = () => {
     }
   ];
 
-  
+
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + 6);
   };
@@ -83,17 +83,24 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-black text-white relative">
       <div className="max-w-7xl mx-auto px-8 md:px-16">
-        
+
         {/* Main Heading */}
-        <div className="mb-20 text-center">
-          <motion.h2 
+        <div className="text-center mb-20">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-extrabold tracking-tight uppercase"
+            className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
           >
-            Featured  <span className="text-[#deff9a]">Projects.</span>
+            Featured <span className="text-[#deff9a]">Projects.</span>
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "80px" }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
+          ></motion.div>
           <p className="text-gray-500 mt-6 font-light text-lg max-w-2xl mx-auto">
             A showcase of my full-stack applications, mobile developments, and ongoing innovations.
           </p>
@@ -101,9 +108,9 @@ const Projects = () => {
 
         {/* 1. Completed Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-         
+
           {completedProjects.slice(0, visibleCount).map((project, index) => (
-            <ProjectCard 
+            <ProjectCard
               key={index}
               title={project.title}
               description={project.description}
@@ -115,10 +122,10 @@ const Projects = () => {
           ))}
         </div>
 
-        
+
         {visibleCount < completedProjects.length && (
           <div className="flex justify-center mb-24">
-            <button 
+            <button
               onClick={handleLoadMore}
               className="bg-[#111] text-white border border-[#deff9a]/50 hover:bg-[#deff9a] hover:text-black hover:border-[#deff9a] px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-lg"
             >
@@ -128,7 +135,7 @@ const Projects = () => {
         )}
 
         {/* 2. Upcoming Projects Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -138,10 +145,10 @@ const Projects = () => {
             <h3 className="text-3xl font-bold text-white">What's <span className="text-gray-500">Next?</span></h3>
             <div className="flex-grow h-px bg-gray-900"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {upcomingProjects.map((project, index) => (
-              <UpcomingProjectCard 
+              <UpcomingProjectCard
                 key={index}
                 title={project.title}
                 description={project.description}

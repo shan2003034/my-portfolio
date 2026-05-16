@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import { FaReact, FaJava, FaPhp, FaGithub } from "react-icons/fa";
 import { SiFlutter, SiTailwindcss, SiSpringboot, SiMysql, SiSqlite, SiHibernate, SiFirebase, SiAndroidstudio, SiArduino } from "react-icons/si";
 import { TbBrandHtml5, TbDeviceMobileCode, TbServer, TbDatabase, TbTools, TbRobot } from "react-icons/tb";
-import { VscVscode } from "react-icons/vsc"; 
+import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
- 
+
   const skillCategories = [
     {
       title: "Frontend & Mobile",
       icon: <TbDeviceMobileCode className="text-3xl text-[#deff9a]" />,
-      colSpan: "md:col-span-2 lg:col-span-2", 
+      colSpan: "md:col-span-2 lg:col-span-2",
       skills: [
         { name: "React Native", icon: <FaReact className="text-[#61DAFB]" /> },
         { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
@@ -24,7 +24,7 @@ const Skills = () => {
     {
       title: "Backend Core",
       icon: <TbServer className="text-3xl text-[#deff9a]" />,
-      colSpan: "md:col-span-1 lg:col-span-1", 
+      colSpan: "md:col-span-1 lg:col-span-1",
       skills: [
         { name: "Java", icon: <FaJava className="text-[#ED8B00]" /> },
         { name: "Spring Boot", icon: <SiSpringboot className="text-[#6DB33F]" /> },
@@ -45,7 +45,7 @@ const Skills = () => {
     {
       title: "Development Tools",
       icon: <TbTools className="text-3xl text-[#deff9a]" />,
-      colSpan: "md:col-span-2 lg:col-span-2", 
+      colSpan: "md:col-span-2 lg:col-span-2",
       skills: [
         { name: "VS Code", icon: <VscVscode className="text-[#007ACC]" /> },
         { name: "Android Studio", icon: <SiAndroidstudio className="text-[#3DDC84]" /> },
@@ -57,7 +57,7 @@ const Skills = () => {
     {
       title: "AI Assistants",
       icon: <TbRobot className="text-3xl text-[#deff9a]" />,
-      colSpan: "md:col-span-1 lg:col-span-3", 
+      colSpan: "md:col-span-1 lg:col-span-3",
       skills: [
         { name: "ChatGPT", icon: <TbRobot className="text-green-500" /> },
         { name: "Gemini", icon: <TbRobot className="text-blue-500" /> },
@@ -69,28 +69,28 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 bg-[#050505] text-white relative overflow-hidden">
-      
+
       {/* Background Subtle Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#deff9a] rounded-full blur-[250px] opacity-[0.03] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10">
-        
-        {/* Modern Heading */}
-        <div className="mb-20">
-          <motion.h2 
+
+        {/* Section Heading */}
+        <div className="text-center mb-20">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-extrabold tracking-tight uppercase"
+            className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
           >
-            Technical  <span className="text-[#deff9a]">Arsenal.</span>
+            Technical <span className="text-[#deff9a]">Arsenal.</span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "80px" }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="h-1.5 bg-[#deff9a] mt-6"
+            className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
           ></motion.div>
         </div>
 
@@ -115,7 +115,7 @@ const Skills = () => {
               {/* Skill Pills */}
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="flex items-center gap-2 px-5 py-2.5 bg-[#111] border border-gray-800 rounded-full text-gray-300 font-medium hover:text-black hover:bg-[#deff9a] hover:border-[#deff9a] hover:-translate-y-1 transition-all duration-300 cursor-default"
                   >

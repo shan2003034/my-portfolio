@@ -6,13 +6,13 @@ import { SiFacebook } from "react-icons/si";
 const Contact = () => {
   const [result, setResult] = useState("");
 
-  
+
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    
+
     formData.append("access_key", "e6e729ea-6244-46ac-a081-dbf7aeec6b6d");
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -25,7 +25,7 @@ const Contact = () => {
     if (data.success) {
       setResult("Message Sent Successfully!");
       event.target.reset();
-      setTimeout(() => setResult(""), 5000); 
+      setTimeout(() => setResult(""), 5000);
     } else {
       console.log("Error", data);
       setResult(data.message);
@@ -34,31 +34,38 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-[#050505] text-white relative overflow-hidden">
-      
+
       {/* Subtle Background Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-[50%] bg-[#deff9a] rounded-t-full blur-[200px] opacity-[0.03] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10">
-        
+
         {/* Section Heading */}
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-extrabold tracking-tight uppercase"
+            className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
           >
             Get In <span className="text-[#deff9a]">Touch.</span>
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "80px" }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
+          ></motion.div>
           <p className="text-gray-500 mt-6 font-light text-lg">
             Have a project in mind, need a software solution, or just want to say hi? Feel free to reach out.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Left Side: Contact Info & Socials */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -117,7 +124,7 @@ const Contact = () => {
                   <FaFacebook />
                 </a>
               </div>
-              
+
               {/* Byte Code LK Brand Button */}
               <div className="mt-6">
                 <a href="#" className="inline-flex items-center gap-3 bg-[#1a1a1a] border border-gray-700 px-6 py-3 rounded-full hover:border-[#deff9a] transition-all duration-300 group">
@@ -129,7 +136,7 @@ const Contact = () => {
           </motion.div>
 
           {/* Right Side: Contact Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -140,20 +147,20 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm text-gray-400 font-medium ml-1">Your Name</label>
-                  <input 
-                    type="text" 
-                    name="name" 
-                    required 
+                  <input
+                    type="text"
+                    name="name"
+                    required
                     placeholder="John Doe"
                     className="w-full bg-[#111] text-white border border-gray-800 rounded-xl px-5 py-4 focus:outline-none focus:border-[#deff9a] focus:ring-1 focus:ring-[#deff9a] transition-all"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm text-gray-400 font-medium ml-1">Your Email</label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    required 
+                  <input
+                    type="email"
+                    name="email"
+                    required
                     placeholder="john@example.com"
                     className="w-full bg-[#111] text-white border border-gray-800 rounded-xl px-5 py-4 focus:outline-none focus:border-[#deff9a] focus:ring-1 focus:ring-[#deff9a] transition-all"
                   />
@@ -162,17 +169,17 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label className="text-sm text-gray-400 font-medium ml-1">Message</label>
-                <textarea 
-                  name="message" 
-                  required 
+                <textarea
+                  name="message"
+                  required
                   rows="5"
                   placeholder="Tell me about your project..."
                   className="w-full bg-[#111] text-white border border-gray-800 rounded-xl px-5 py-4 focus:outline-none focus:border-[#deff9a] focus:ring-1 focus:ring-[#deff9a] transition-all resize-none"
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="w-full bg-[#deff9a] text-black font-bold text-lg py-4 rounded-xl hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(222,255,154,0.2)]"
               >
                 Send Message

@@ -3,37 +3,42 @@ import { motion } from "framer-motion";
 const EducationItem = ({ logo, institution, qualification, period, description }) => {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="bg-[#111] p-10 rounded-3xl border border-gray-900 hover:border-[#deff9a]/20 transition-colors flex flex-col md:flex-row gap-10 items-center text-center md:text-left"
+      transition={{ duration: 0.5 }}
+      className="bg-[#0a0a0a] p-6 md:p-8 rounded-3xl border border-gray-800 hover:border-[#deff9a]/30 transition-all duration-300 flex flex-col md:flex-row gap-6 items-start relative group"
     >
-      {/* 1. Logo Section - Larger & Clear */}
-      <div className="w-28 h-28 md:w-32 md:h-32 flex-shrink-0 bg-white p-6 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(222,255,154,0.1)]">
+      {/* 1. Logo Section - Smaller, Sleek & Rounded Box */}
+      <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 bg-white p-3 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
         {logo ? (
           <img src={logo} alt={institution} className="w-full h-full object-contain" />
         ) : (
-          <div className="text-4xl text-black font-bold">L</div> // Placeholder if no logo
+          <div className="text-2xl text-black font-bold">L</div> 
         )}
       </div>
 
-      {/* 2. Topic, Subtopic, Period Section */}
-      <div className="flex-grow space-y-4">
-        <div>
-          <h3 className="text-3xl font-extrabold text-white leading-tight">
-            {institution}
-          </h3>
-          <h4 className="text-xl font-medium text-gray-300 mt-1">
-            {qualification}
-          </h4>
-          <span className="text-sm font-bold text-[#deff9a] tracking-widest uppercase bg-[#deff9a]/10 px-4 py-2 rounded-full inline-block mt-4">
+      {/* 2. Content Section */}
+      <div className="flex-grow w-full">
+        {/* Title and Period - Side by Side on Desktop */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#deff9a] transition-colors">
+              {institution}
+            </h3>
+            <h4 className="text-base md:text-lg font-medium text-gray-400 mt-1">
+              {qualification}
+            </h4>
+          </div>
+          
+          {/* Period Badge - Moved to Right */}
+          <span className="inline-block text-xs font-bold text-[#deff9a] tracking-widest uppercase bg-[#deff9a]/10 px-4 py-2 rounded-full whitespace-nowrap h-fit mt-2 md:mt-0 border border-[#deff9a]/20">
             {period}
           </span>
         </div>
 
         {/* 3. Description Section */}
-        <p className="text-lg text-gray-400 font-light leading-relaxed max-w-2xl mx-auto md:mx-0 pt-4 border-t border-gray-800">
+        <p className="text-base text-gray-500 font-light leading-relaxed max-w-3xl mt-4 pt-4 border-t border-gray-800/50">
           {description}
         </p>
       </div>

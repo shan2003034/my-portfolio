@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import myLogo from "../assets/logo.png"; 
+import myLogo from "../assets/logo.png";
 
 const About = () => {
   return (
@@ -9,7 +9,7 @@ const About = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#deff9a] rounded-full blur-[150px] opacity-5 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-8 md:px-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -17,22 +17,33 @@ const About = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           {/* Left Column: Text Content */}
-          <div className="space-y-8">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">
+          <div className="space-y-8 ">
+            <div className="mb-8">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
+              >
                 About <span className="text-[#deff9a]">Me.</span>
-              </h2>
-              <div className="h-1 w-12 bg-[#deff9a] mt-2"></div>
+              </motion.h2>
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                whileInView={{ opacity: 1, width: "80px" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="h-1.5 bg-[#deff9a] mt-4"
+              ></motion.div>
             </div>
 
             <div className="space-y-6 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
               <p>
-                Hello! I'm a passionate <span className="text-white font-medium">Full Stack Software Engineer</span>. 
-                I am currently studying Software Engineering at the <span className="text-white font-medium">Java Institute for Advanced Technology</span> 
+                Hello! I'm a passionate <span className="text-white font-medium">Full Stack Software Engineer</span>.
+                I am currently studying Software Engineering at the <span className="text-white font-medium">Java Institute for Advanced Technology</span>
                 and reading for my top-up degree from <span className="text-white font-medium">Birmingham City University</span>.
               </p>
               <p>
-                I specialize in building diverse digital solutions, including scalable websites, standalone applications, and intuitive mobile apps. 
+                I specialize in building diverse digital solutions, including scalable websites, standalone applications, and intuitive mobile apps.
                 Alongside software development, I have practical experience working with <span className="text-[#deff9a]">IoT technologies</span>.
               </p>
               <p>
@@ -72,12 +83,12 @@ const About = () => {
                 <p className="text-white font-medium">Clean & Scalable</p>
               </div>
 
-              
+
               <div className="bg-[#111] p-6 rounded-3xl border border-gray-900 hover:border-[#deff9a]/30 transition-colors h-48 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={myLogo} 
-                  alt="Personal Logo" 
-                  className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity" 
+                <img
+                  src={myLogo}
+                  alt="Personal Logo"
+                  className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
 

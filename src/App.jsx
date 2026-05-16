@@ -12,12 +12,14 @@ function App() {
     <div className="bg-[#050505] min-h-screen font-sans selection:bg-[#deff9a] selection:text-black">
       <Navbar/>
       <Hero />
-      <About />
-      <Education />
-      <Skills />
-      <Projects/>
-      <Contact/>
-      <Footer/>
+      <main className="relative z-10 bg-[#050505] shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+        <About />
+        <Education />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
 
     </div>
   )
