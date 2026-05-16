@@ -2,6 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import UpcomingProjectCard from "./UpcomingProjectCard";
+import LeafyLaneEcommerce from "../assets/leafy lane  e commerce 2.webp"; 
+import LeafyLaneMcommerce from "../assets/leafy lane m commerce.webp"; 
+import LeafyLaneMcommerceAdminPanel from "../assets/leafy lane admin panel.webp"; 
+import ZapChat from "../assets/zap chat.webp"; 
+import CBCBank from "../assets/cbc.webp"; 
+import BurgerHouse from "../assets/burger house.webp"; 
+import BookClub from "../assets/the book club.webp"; 
+import MediClinicPatientPortal from "../assets/medi clinic patient portal.webp"; 
 
 const Projects = () => {
 
@@ -10,68 +18,87 @@ const Projects = () => {
   // 1. Completed Projects Data
   const completedProjects = [
     {
-      title: "Leafy Lane",
-      description: "An organic food e-commerce platform featuring a native Android application and a robust enterprise-level backend. Designed to connect users with fresh, organic products seamlessly.",
-      image: "",
-      techStack: ["Android (Java)", "Spring Boot", "MySQL", "Hibernate"],
+      title: "Leafy Lane E-Commerce",
+      description: "A comprehensive organic food e-commerce web platform featuring a secure database, intuitive user interface, and integrated payment processing.",
+      image: LeafyLaneEcommerce,
+      techStack: ["Java EE", "Hibernate", "MySQL", "PayHere"],
       githubLinks: [
-        { name: "Frontend Repo", url: "#" },
-        { name: "Backend Repo", url: "#" }
+        { name: "GitHub Repo", url: "https://github.com/shan2003034/Leafy-Lane" }
       ],
       liveLink: ""
     },
     {
-      title: "Zap Chat",
-      description: "A real-time cross-platform chat application providing instant messaging capabilities. Features a smooth UI and reliable backend infrastructure for real-time data sync.",
-      image: "",
-      techStack: ["React Native", "Java", "Hibernate"],
-      githubLinks: [{ name: "GitHub", url: "#" }],
+      title: "Leafy Lane M-Commerce",
+      description: "The dedicated Android mobile application for the Leafy Lane organic food store, featuring real-time syncing and map integration.",
+      image: LeafyLaneMcommerce,
+      techStack: ["Java", "Firebase", "Google Maps"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/Leafy-Lane-Android-Application" }],
       liveLink: ""
     },
     {
-      title: "Burger House",
-      description: "A comprehensive desktop application designed for managing a burger shop's daily operations, including billing, Jasper reports, and barcode generation.",
-      image: "",
-      techStack: ["Java (Desktop)", "MySQL", "Jasper Reports"],
-      githubLinks: [{ name: "GitHub", url: "#" }],
+      title: "Leafy Lane M-Commerce Admin Panel",
+      description: "A centralized management dashboard built to oversee operations, inventory, and analytics for the Leafy Lane M-Commerce app.",
+      image: LeafyLaneMcommerceAdminPanel,
+      techStack: ["Spring Boot", "Firestore"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/leafylane-android-application-admin-web" }],
       liveLink: ""
     },
 
     {
-      title: "Portfolio Website",
-      description: "My personal portfolio website designed with React and Tailwind CSS.",
-      image: "", techStack: ["React", "Tailwind CSS"], githubLinks: [], liveLink: ""
+      title: "ZAP Chat App",
+      description: "A cross-platform real-time chat application offering instant messaging capabilities powered by WebSockets.",
+      image: ZapChat,
+      techStack: ["React Native", "WebSockets", "MySQL"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/Zap-Chat-" }],
+      liveLink: ""
     },
     {
-      title: "E-Commerce Dashboard",
-      description: "Admin panel for managing products, orders, and users.",
-      image: "", techStack: ["React", "Node.js"], githubLinks: [], liveLink: ""
+      title: "CBC Banking System",
+      description: "A robust standalone desktop application developed for bank staff to efficiently handle and monitor daily banking transactions.",
+      image: CBCBank,
+      techStack: ["Java Swing", "MySQL"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/Callisto-Software-Solution/CBC-Bank-System" }],
+      liveLink: ""
     },
     {
-      title: "Weather App",
-      description: "A simple weather application using OpenWeather API.",
-      image: "", techStack: ["JavaScript", "API"], githubLinks: [], liveLink: ""
+     title: "Burger House POS",
+      description: "A Point of Sale (POS) system built to handle sales processing and inventory management specifically for a bakery/fast-food shop.",
+      image: BurgerHouse,
+      techStack: ["Java Swing", "MySQL"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/Burger-House" }],
+      liveLink: ""
     },
     {
-      title: "Task Manager",
-      description: "A to-do list app with advanced categorization.",
-      image: "", techStack: ["Flutter", "Firebase"], githubLinks: [], liveLink: ""
+     title: "The Book Club",
+      description: "An online bookstore and e-commerce application allowing users to browse, purchase, and manage book collections securely.",
+      image: BookClub,
+      techStack: ["PHP", "MySQL","HTML/CSS"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/The-Book-Club-online-book-shop" }],
+      liveLink: ""
+    },
+    {
+     title: "MediClinic - Patient Portal",
+      description: "A user-centric healthcare portal allowing patients to browse doctor specialties, check real-time availability, book channeling slots, download digital prescriptions, and securely view their medical history.",
+      image: MediClinicPatientPortal,
+      techStack: ["React.js", "Tailwind CSS","Axios","Vite"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/mediclinic-patient-portal" }],
+      liveLink: ""
     }
   ];
 
   // 2. Upcoming Projects Data
   const upcomingProjects = [
     {
-      title: "Byte Code LK Platform",
-      category: "EdTech & Content",
+      title: "MediClinic Staff Management Portal",
+      category: "Healthcare & Enterprise System",
       expectedDate: "Ongoing",
-      description: "A comprehensive digital platform and community hub focused on sharing software development knowledge, tutorials, and tech content."
+      description: "A modern, role-based dashboard application tailored for clinic receptionists and medical practitioners. It streamlines clinical workflows with modules for live appointment queues, instant patient registry, doctor schedule filtering, and dynamic financial summaries."
     },
     {
-      title: "Smart Agriculture IoT System",
-      category: "IoT & Hardware",
-      expectedDate: "In Research",
-      description: "An integrated hardware and software solution using ESP32/Arduino for smart greenhouse management and acoustic pest detection."
+      title: "MediClinic Enterprise Backend Engine",
+      category: "System Architecture & API Development",
+      expectedDate: "Ongoing",
+      description: "A secure, robust RESTful API layer built to orchestrate clinical business logic. Features secure JWT authentication, relational database mapping for multi-entity clinic workflows, automatic queue number generation, and high-performance filtering endpoints."
     }
   ];
 

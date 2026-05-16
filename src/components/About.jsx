@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import myLogo from "../assets/logo.png";
 
 const About = () => {
@@ -53,14 +53,14 @@ const About = () => {
 
             {/* Social Links */}
             <div className="flex gap-6 pt-4">
-              <a href="#" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
+              <a href="https://github.com/shan2003034" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
                 <FaGithub />
               </a>
-              <a href="#" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
+              <a href="https://www.linkedin.com/in/prasannalakshan" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
                 <FaLinkedin />
               </a>
-              <a href="#" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
-                <FaInstagram />
+              <a href="https://www.facebook.com/share/1GLKbAA9eq/" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
+                <FaFacebook />
               </a>
             </div>
           </div>

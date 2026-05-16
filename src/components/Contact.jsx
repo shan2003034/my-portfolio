@@ -111,23 +111,23 @@ const Contact = () => {
             <div className="pt-8 border-t border-gray-800">
               <p className="text-sm text-gray-500 uppercase tracking-widest mb-6">Connect with me</p>
               <div className="flex flex-wrap gap-4">
-                <a href="#" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
+                <a href="https://www.linkedin.com/in/prasannalakshan" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
                   <FaLinkedin />
                 </a>
-                <a href="#" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
+                <a href="https://github.com/shan2003034" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
                   <FaGithub />
                 </a>
-                <a href="#" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
+                <a href="https://wa.me/94705629772" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
                   <FaWhatsapp />
                 </a>
-                <a href="#" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
+                <a href="https://www.facebook.com/share/1GLKbAA9eq/" className="w-12 h-12 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center text-xl hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300">
                   <FaFacebook />
                 </a>
               </div>
 
               {/* Byte Code LK Brand Button */}
               <div className="mt-6">
-                <a href="#" className="inline-flex items-center gap-3 bg-[#1a1a1a] border border-gray-700 px-6 py-3 rounded-full hover:border-[#deff9a] transition-all duration-300 group">
+                <a href="https://www.facebook.com/share/17PbovQj3z/" className="inline-flex items-center gap-3 bg-[#1a1a1a] border border-gray-700 px-6 py-3 rounded-full hover:border-[#deff9a] transition-all duration-300 group">
                   <SiFacebook className="text-[#1877F2] text-xl" />
                   <span className="font-medium text-gray-300 group-hover:text-white">Follow <strong className="text-white">Byte Code LK</strong></span>
                 </a>

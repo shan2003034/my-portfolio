@@ -51,16 +51,16 @@ const Footer = () => {
             
             {/* Social Pills */}
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <a href="https://www.linkedin.com/in/prasannalakshan" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 <FaLinkedin />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <a href="https://github.com/shan2003034" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 <FaGithub />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <a href="https://wa.me/94705629772" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 <FaWhatsapp />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <a href="https://www.facebook.com/share/1GLKbAA9eq/" className="w-10 h-10 bg-[#111] rounded-full flex items-center justify-center text-lg text-gray-400 hover:bg-[#deff9a] hover:text-black hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 <FaFacebook />
               </a>
             </div>
@@ -68,7 +68,7 @@ const Footer = () => {
             {/* Byte Code LK Mini Card */}
             <div className="pt-6 border-t border-gray-900">
                <p className="text-[10px] text-gray-600 uppercase font-bold tracking-[0.2em] mb-4">Official Community</p>
-               <a href="#" className="flex items-center gap-3 bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl hover:border-[#deff9a]/40 transition-all duration-500 group">
+               <a href="https://www.facebook.com/share/17PbovQj3z/" className="flex items-center gap-3 bg-[#0a0a0a] border border-gray-800 p-4 rounded-2xl hover:border-[#deff9a]/40 transition-all duration-500 group">
                   <div className="w-10 h-10 bg-[#1877F2]/10 rounded-xl flex items-center justify-center text-[#1877F2] text-xl group-hover:scale-110 transition-transform">
                     <SiFacebook />
                   </div>
@@ -87,9 +87,9 @@ const Footer = () => {
             © {currentYear} <span className="text-gray-400">Prasanna Lakshan</span>. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-gray-600 text-sm">
-            <span>Built with</span>
-            <FaHeart className="text-red-600 animate-pulse" />
-            <span>using React & Tailwind</span>
+            <span>Designed & Engineered by</span>
+            
+            <span>Prasanna Lakshan</span>
           </div>
         </div>
       </div>
