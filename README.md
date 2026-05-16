@@ -30,11 +30,11 @@ An overview of the high-end dark theme visual architecture, featuring high-contr
     </tr>
     <tr>
       <td align="center" width="50%">
-        <img width="1860" height="832" alt="Image" src="<img width="1847" height="792" alt="Image" src="https://github.com/user-attachments/assets/1af32b8d-2f4d-4c6e-a478-1871a4fd9d22" />
+        <img width="1847" height="792" alt="Image" src="https://github.com/user-attachments/assets/1af32b8d-2f4d-4c6e-a478-1871a4fd9d22" />
         <br><b>About Me </b>
       </td>
       <td align="center" width="50%">
-        <img width="1813" height="838" alt="Image" src="<img width="1860" height="846" alt="Image" src="https://github.com/user-attachments/assets/6112fc95-53c9-47b0-8406-8805c0bfaa37" />
+        <img width="1860" height="846" alt="Image" src="https://github.com/user-attachments/assets/6112fc95-53c9-47b0-8406-8805c0bfaa37" />
         <br><b>Education & Qualifications </b>
       </td>
     </tr>
