@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Only POST requests allowed' });
   }
@@ -11,7 +10,10 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+       
+        "HTTP-Referer": "https://prasanna-lakshan.vercel.app", 
+        "X-Title": "Prasanna Lakshan Portfolio"
       },
       body: JSON.stringify({
         model: "meta-llama/llama-3-8b-instruct:free",
@@ -37,11 +39,23 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-    const reply = data.choices[0].message.content;
 
+   
+    if (data.error) {
+      console.error("OpenRouter API Error Message:", data.error);
+      return res.status(500).json({ message: "OpenRouter Error: " + (data.error.message || "Unknown") });
+    }
+
+    if (!data.choices || data.choices.length === 0) {
+      console.error("No choices returned:", data);
+      return res.status(500).json({ message: "No response from AI model." });
+    }
+
+    const reply = data.choices[0].message.content;
     res.status(200).json({ reply });
+
   } catch (error) {
-    console.error("AI Fetch Error:", error);
+    console.error("Backend Fetch Error:", error);
     res.status(500).json({ message: "Sorry, I am having trouble connecting right now." });
   }
 }
