@@ -8,7 +8,7 @@
 
 Welcome to the repository of my official **Personal Portfolio Website**. This project is a highly customized, ultra-modern, and fully responsive digital showroom crafted to showcase my full-stack software development proficiencies, enterprise backend architectures, and hardware/IoT innovations.
 
-🌐 **Live Demo:** [https://prasanna-lakshan-portfolio.vercel.app/](https://prasanna-lakshan-portfolio.vercel.app/)
+🌐 **Live Demo:** [https://prasanna-lakshan.vercel.app/](https://prasanna-lakshan.vercel.app/)
 
 ---
 
