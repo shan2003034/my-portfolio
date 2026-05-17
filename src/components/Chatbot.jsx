@@ -52,7 +52,7 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="bg-[#111] border border-gray-800 rounded-2xl w-[85vw] sm:w-96 shadow-2xl overflow-hidden mb-4 mr-2 sm:mr-16"
+            className="bg-[#111] border border-gray-800 rounded-2xl w-80 sm:w-96 shadow-2xl overflow-hidden mb-4 mr-16"
           >
            
             <div className="bg-gray-900 px-4 py-3 flex justify-between items-center border-b border-gray-800">
