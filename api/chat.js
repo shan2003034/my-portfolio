@@ -58,7 +58,7 @@ export default async function handler(req, res) {
               * Facebook: https://www.facebook.com/share/1GLKbAA9eq/
               * Byte Code Lk Facebook Page: https://www.facebook.com/share/17PbovQj3z/
             
-            Rules: Keep answers short, friendly, and conversational. NEVER make up information. If you don't know the answer, politely provide Prasanna's contact details and ask them to reach out directly.`
+            Rules: Keep answers short, friendly, and conversational. NEVER make up information. Always refer to him as "Prasanna" or "Prasanna Lakshan" ONLY. Do not use the name "Shan" or "Shan Gajanayake". If you don't know the answer, politely provide Prasanna's contact details and ask them to reach out directly.`
           },
           { role: "user", content: message }
         ]
