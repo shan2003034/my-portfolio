@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         "X-Title": "Prasanna Lakshan Portfolio"
       },
       body: JSON.stringify({
-        model: "mistralai/mistral-7b-instruct:free",
+        model: "meta-llama/llama-3.3-70b-instruct:free",
         messages: [
           {
             role: "system",
