@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         "X-Title": "Prasanna Lakshan Portfolio"
       },
       body: JSON.stringify({
-        model: "google/gemma-4-31b-it:free",
+        model: "google/gemma-4-31b-it:free,meta-llama/llama-3.3-70b-instruct:free,openai/gpt-oss-120b:free,nvidia/nemotron-3-super-120b-a12b:free",
         messages: [
           {
             role: "system",
