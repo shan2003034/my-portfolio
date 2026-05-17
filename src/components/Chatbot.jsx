@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { Player } from '@lottiefiles/react-lottie-player';
+import robotAnimation from '../assets/robot.json';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
-    { role: "ai", content: "Hi! I'm Shan's AI Assistant. Ask me anything about his skills or projects!" }
+    { role: "ai", content: "Hi! I'm Lakshan's AI Assistant. Ask me anything about his skills or projects!" }
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -103,9 +105,19 @@ const Chatbot = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#deff9a] text-black p-4 rounded-full shadow-[0_0_20px_rgba(222,255,154,0.3)] flex items-center justify-center hover:shadow-[0_0_30px_rgba(222,255,154,0.5)] transition-shadow duration-300"
+        className="flex items-center justify-center focus:outline-none z-50"
       >
-        {isOpen ? <FaTimes className="text-2xl" /> : <FaRobot className="text-2xl" />}
+        {isOpen ? (
+         
+          <div className="bg-[#deff9a] text-black w-14 h-14 rounded-full shadow-[0_0_20px_rgba(222,255,154,0.3)] flex items-center justify-center hover:shadow-[0_0_30px_rgba(222,255,154,0.5)] transition-shadow duration-300">
+            <FaTimes className="text-2xl" /> 
+          </div>
+        ) : (
+         
+          <div className="w-25 h-25 sm:w-40 sm:h-40 drop-shadow-[0_0_15px_rgba(222,255,154,0.3)]">
+             <Player autoplay loop src={robotAnimation}  />
+          </div>
+        )}
       </motion.button>
 
     </div>
