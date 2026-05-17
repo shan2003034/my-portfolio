@@ -52,7 +52,7 @@ const Chatbot = () => {
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             className="bg-[#111] border border-gray-800 rounded-2xl w-80 sm:w-96 shadow-2xl overflow-hidden mb-4 mr-16"
           >
-            {/* Header */}
+           
             <div className="bg-gray-900 px-4 py-3 flex justify-between items-center border-b border-gray-800">
               <div className="flex items-center gap-2">
                 <FaRobot className="text-[#deff9a] text-xl" />
