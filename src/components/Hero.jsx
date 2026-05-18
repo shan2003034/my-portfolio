@@ -5,7 +5,7 @@ import myCv from "../assets/CV_Prasanna_Lakshan.pdf";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen bg-black text-white flex items-center justify-center py-20 lg:py-0 selection:bg-[#deff9a] selection:text-black overflow-hidden">
+    <section className="relative w-full min-h-screen bg-black text-white flex items-center justify-center py-12 lg:py-0 selection:bg-[#deff9a] selection:text-black overflow-hidden">
       
       {/* Background Glow Effect */}
       <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
@@ -13,35 +13,21 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-6 md:px-16 relative z-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-12 items-center gap-12">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 items-center gap-12 w-full">
           
-          {/* Mobile Profile Image - Only visible on small/medium screens */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="lg:hidden w-48 h-48 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-[#deff9a]/30 shadow-[0_0_30px_rgba(222,255,154,0.15)]"
-          >
-            <img
-              src={profileImg}
-              alt="Prasanna Lakshan"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            />
-          </motion.div>
-
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-6 text-center lg:text-left"
+            className="w-full lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             <div className="space-y-4">
               <h2 className="text-xs md:text-sm text-[#deff9a] font-bold tracking-[0.3em] uppercase">
                 Software Engineering Undergraduate
               </h2>
               <h1 className="text-4xl md:text-6xl lg:text-[85px] font-extrabold text-white leading-[1.1] tracking-tight">
-                Prasanna <br className="hidden md:block" /> Lakshan.
+                Prasanna <br className="hidden lg:block" /> Lakshan.
               </h1>
               <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
                 I build elegant, functional, and user-centric digital experiences. Specializing in <span className="text-white font-medium">Full Stack Development</span>, Mobile Apps, and innovative IoT solutions.
@@ -66,25 +52,19 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Desktop Profile Image - Only visible on large screens */}
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
-              className="relative aspect-[4/5] rounded-[40px] overflow-hidden border border-white/10"
-            >
-              <img
-                src={profileImg}
-                alt="Prasanna Lakshan"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-            </motion.div>
-            
-            {/* Decorative background element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#deff9a] rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
-          </div>
+          {/* Profile Image - Original design preserved without any borders or rounding */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-none lg:col-span-5 aspect-[4/5] overflow-hidden"
+          >
+            <img
+              src={profileImg}
+              alt="Prasanna Lakshan"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </motion.div>
 
         </div>
       </div>
