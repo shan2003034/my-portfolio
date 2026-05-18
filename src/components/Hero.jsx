@@ -11,14 +11,14 @@ const Hero = () => {
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#deff9a] rounded-full mix-blend-soft-light filter blur-[200px] opacity-10"></div>
       </div>
 
-      {/* Changed to flex-col for mobile, grid for desktop */}
-      <div className="max-w-7xl mx-auto w-full px-8 md:px-16 flex flex-col lg:grid lg:grid-cols-12 items-center relative z-10 pt-24 lg:pt-0 pb-12 lg:pb-0">
+      <div className="max-w-7xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-6 space-y-8 relative z-20 w-full"
+          
+          className="lg:col-span-6 space-y-8 pt-28 pb-10 lg:pt-0 lg:pb-0 relative z-20 text-center lg:text-left"
         >
           <div className="space-y-4">
             <h2 className="text-sm md:text-base text-[#deff9a] font-bold tracking-[0.25em] uppercase">
@@ -27,12 +27,14 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl lg:text-[80px] font-extrabold text-white leading-[1.1] tracking-tight">
               Prasanna <br /> Lakshan.
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light mt-8">
+            {/* ඡේදය Mobile වලදී මැදට ගැනීම සඳහා mx-auto lg:mx-0 භාවිතා කර ඇත */}
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light mt-8">
               I build elegant, functional, and user-centric digital experiences. Specializing in Full Stack Development, Mobile Apps, and innovative IoT solutions.
             </p>
           </div>
 
-          <div className="pt-10 flex flex-wrap gap-5 items-center">
+          {/* බොත්තම් දෙක Mobile වලදී මැදට ගැනීම සඳහා justify-center lg:justify-start භාවිතා කර ඇත */}
+          <div className="pt-10 flex flex-wrap gap-5 items-center justify-center lg:justify-start">
             <a
               href={myCv}
               download="Prasanna_Lakshan_CV.pdf"
@@ -50,22 +52,22 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Mobile Profile Image - Exact original style without borders, only for small screens */}
+        {/* Mobile Profile Image - අකුරු වලට යටින් එන රූපය */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
-          className="block lg:hidden w-full h-[400px] mt-12 relative z-0"
+          className="block lg:hidden w-full h-[400px] relative z-0 mt-4"
         >
           <img
             src={profileImg}
             alt="Prasanna Lakshan"
-            className="w-full h-full object-cover object-top grayscale"
+            className="w-full h-full object-cover object-top grayscale opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         </motion.div>
 
-        {/* Desktop Profile Image - EXACTLY AS ORIGINAL */}
+        {/* Desktop Profile Image - මෙය කිසිසේත්ම වෙනස් කර නැත */}
         <div className="hidden lg:block fixed right-0 top-0 w-1/2 h-screen z-0 pointer-events-none">
           <motion.div
             initial={{ opacity: 0 }}
