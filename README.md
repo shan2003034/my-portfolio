@@ -6,7 +6,7 @@
 
 <br/>
 
-Welcome to the repository of my official **Personal Portfolio Website**. This project is a highly customized, ultra-modern, and fully responsive digital showroom crafted to showcase my full-stack software development proficiencies, enterprise backend architectures, and hardware/IoT innovations.
+Welcome to the repository of my official **Personal Portfolio Website**. This project is a highly customized, ultra-modern, and fully responsive digital showroom crafted to showcase my full-stack software development proficiencies, enterprise backend architectures, and hardware/IoT innovations. It is now supercharged with a custom-built AI Assistant to provide a highly interactive user experience.
 
 🌐 **Live Demo:** [https://prasanna-lakshan.vercel.app/](https://prasanna-lakshan.vercel.app/)
 
@@ -55,10 +55,11 @@ An overview of the high-end dark theme visual architecture, featuring high-contr
 
 ## ✨ Key Architectural Features
 
+* **🤖 Custom AI Assistant Integration:** Built-in interactive AI chatbot powered by the OpenRouter API. It acts as a virtual representative, capable of answering visitor queries regarding my tech stack, project history, and professional experience in real-time.
 * **Fixed Background Parallax Reveal:** Implemented a modern scroll-reveal layout on the Hero section where the grayscale developer profile card locks in position while content seamlessly slides over it.
 * **Bento Box Skill Layout:** Replaced outdated traditional progress bars with a sleek, asymmetric Bento Box layout utilizing physics-based interactive **Floating Skill Pills** that react beautifully to pointer interaction.
 * **Scroll-Spy Intelligent Navbar:** Built a dynamic, glassmorphic navigation bar that tracks viewport positions dynamically and automatically highlights the current browsing section.
-* **Paginated Project Grid:** Features an integrated pagination state logic (`6-by-6` filter arrays) managed via React states to facilitate an optimal user loading experience through a "See More" pipeline.
+* **Paginated Project Grid:** Features an integrated pagination state logic (`6-by-6` filter arrays on desktop, `3-by-3` on mobile) managed via React states to facilitate an optimal user loading experience through a "See More" pipeline.
 * **Serverless E-Mail Integration:** Integrated an asynchronous endpoint configuration utilizing the **Web3Forms API** to process secure, direct e-mail submissions from the contact terminal without managing dedicated backend infrastructures.
 * **Brand Expansion Hub:** Strategically embedded interactive touchpoints for external digital platforms, focusing heavily on driving user engagement toward the tech brand community **Byte Code LK**.
 
@@ -69,8 +70,9 @@ An overview of the high-end dark theme visual architecture, featuring high-contr
 * **Frontend Library:** React.js (Functional Components & Hooks)
 * **Styling Framework:** Tailwind CSS (Completely utility-first custom configuration)
 * **Animation Core:** Framer Motion (Orchestrated exit/entry animations, state transitions, and viewport scroll triggers)
+* **AI Engine:** OpenRouter API (LLM Integration for the custom Chatbot)
 * **Icon Directory:** React Icons (`fa`, `si`, `tb`, `vsc` packages)
-* **Form Submission:** Web3Forms API API Integration
+* **Form Submission:** Web3Forms API Integration
 * **Build System & Tooling:** Vite (Next-generation lightning-fast frontend tooling)
 
 ---
@@ -83,3 +85,29 @@ Follow these streamlined instructions to clone, construct, and execute this web 
 ```bash
 git clone [https://github.com/shan2003034/Prasanna-Portfolio.git](https://github.com/shan2003034/Prasanna-Portfolio.git)
 cd Prasanna-Portfolio
+```
+
+**2. Install dependencies**
+```bash
+npm install
+```
+
+**3. Setup Environment Variables**
+Create a `.env` file in the root directory and add your API keys for the contact form and the AI Assistant:
+```env
+VITE_WEB3FORMS_ACCESS_KEY=your_web3forms_api_key_here
+VITE_OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+
+**4. Start the development server**
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5173` to view the application.
+
+---
+## 👨‍💻 Author
+**Prasanna Lakshan**
+* 🌐 Portfolio: [https://prasanna-lakshan.vercel.app/](https://prasanna-lakshan.vercel.app/)
+* 💼 LinkedIn: [https://www.linkedin.com/in/prasannalakshan](https://www.linkedin.com/in/prasannalakshan)
+* 💻 GitHub: [https://github.com/shan2003034](https://github.com/shan2003034)
