@@ -27,13 +27,13 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl lg:text-[80px] font-extrabold text-white leading-[1.1] tracking-tight">
               Prasanna <br /> Lakshan.
             </h1>
-            {/* ඡේදය Mobile වලදී මැදට ගැනීම සඳහා mx-auto lg:mx-0 භාවිතා කර ඇත */}
+            
             <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light mt-8">
               I build elegant, functional, and user-centric digital experiences. Specializing in Full Stack Development, Mobile Apps, and innovative IoT solutions.
             </p>
           </div>
 
-          {/* බොත්තම් දෙක Mobile වලදී මැදට ගැනීම සඳහා justify-center lg:justify-start භාවිතා කර ඇත */}
+          
           <div className="pt-10 flex flex-wrap gap-5 items-center justify-center lg:justify-start">
             <a
               href={myCv}
@@ -52,7 +52,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Mobile Profile Image - අකුරු වලට යටින් එන රූපය */}
+       
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         </motion.div>
 
-        {/* Desktop Profile Image - මෙය කිසිසේත්ම වෙනස් කර නැත */}
+       
         <div className="hidden lg:block fixed right-0 top-0 w-1/2 h-screen z-0 pointer-events-none">
           <motion.div
             initial={{ opacity: 0 }}

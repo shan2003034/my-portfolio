@@ -4,21 +4,23 @@ import myLogo from "../assets/logo.png";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#050505] text-white relative overflow-hidden">
+    <section id="about" className="py-16 lg:py-24 bg-[#050505] text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#deff9a] rounded-full blur-[150px] opacity-5 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-8 md:px-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          {/* Left Column: Text Content */}
-          <div className="space-y-8 ">
-            <div className="mb-8">
+         
+          <div className="space-y-8 text-center lg:text-left">
+            
+           
+            <div className="mb-8 flex flex-col items-center lg:items-start">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +38,7 @@ const About = () => {
               ></motion.div>
             </div>
 
-            <div className="space-y-6 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+            <div className="space-y-6 text-base md:text-xl text-gray-400 font-light leading-relaxed">
               <p>
                 Hello! I'm a passionate <span className="text-white font-medium">Full Stack Software Engineer</span>.
                 I am currently studying Software Engineering at the <span className="text-white font-medium">Java Institute for Advanced Technology</span>
@@ -51,8 +53,8 @@ const About = () => {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex gap-6 pt-4">
+            
+            <div className="flex justify-center lg:justify-start gap-6 pt-4">
               <a href="https://github.com/shan2003034" className="text-2xl text-gray-500 hover:text-[#deff9a] transition-colors">
                 <FaGithub />
               </a>
@@ -65,9 +67,10 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Column: Visual Card/Image representation */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4 pt-12">
+         
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:mt-0">
+            
+            <div className="space-y-4 pt-0 sm:pt-12">
               <div className="bg-[#111] p-8 rounded-3xl border border-gray-900 hover:border-[#deff9a]/30 transition-colors">
                 <h3 className="text-[#deff9a] font-bold text-sm uppercase tracking-widest mb-2">Education</h3>
                 <p className="text-white font-medium">Java Institute & BCU</p>
@@ -77,12 +80,12 @@ const About = () => {
                 <p className="text-white font-medium">Practical Experience</p>
               </div>
             </div>
+            
             <div className="space-y-4">
               <div className="bg-[#111] p-8 rounded-3xl border border-gray-900 hover:border-[#deff9a]/30 transition-colors">
                 <h3 className="text-[#deff9a] font-bold text-sm uppercase tracking-widest mb-2">Code</h3>
                 <p className="text-white font-medium">Clean & Scalable</p>
               </div>
-
 
               <div className="bg-[#111] p-6 rounded-3xl border border-gray-900 hover:border-[#deff9a]/30 transition-colors h-48 flex items-center justify-center overflow-hidden">
                 <img
@@ -91,9 +94,9 @@ const About = () => {
                   className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
-
             </div>
           </div>
+
         </motion.div>
       </div>
     </section>

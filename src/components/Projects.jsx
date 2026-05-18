@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import UpcomingProjectCard from "./UpcomingProjectCard";
@@ -13,18 +13,36 @@ import MediClinicPatientPortal from "../assets/medi clinic patient portal.webp";
 
 const Projects = () => {
 
+ 
   const [visibleCount, setVisibleCount] = useState(6);
+  const [loadStep, setLoadStep] = useState(6);
 
-  // 1. Completed Projects Data
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        
+        setVisibleCount(3);
+        setLoadStep(3);
+      } else {
+        
+        setVisibleCount(6);
+        setLoadStep(6);
+      }
+    };
+
+    
+    handleResize();
+
+  }, []);
+
   const completedProjects = [
     {
       title: "Leafy Lane E-Commerce",
       description: "A comprehensive organic food e-commerce web platform featuring a secure database, intuitive user interface, and integrated payment processing.",
       image: LeafyLaneEcommerce,
       techStack: ["Java EE", "Hibernate", "MySQL", "PayHere"],
-      githubLinks: [
-        { name: "GitHub Repo", url: "https://github.com/shan2003034/Leafy-Lane" }
-      ],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/Leafy-Lane" }],
       liveLink: ""
     },
     {
@@ -43,7 +61,6 @@ const Projects = () => {
       githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/leafylane-android-application-admin-web" }],
       liveLink: ""
     },
-
     {
       title: "ZAP Chat App",
       description: "A cross-platform real-time chat application offering instant messaging capabilities powered by WebSockets.",
@@ -86,7 +103,6 @@ const Projects = () => {
     }
   ];
 
-  // 2. Upcoming Projects Data
   const upcomingProjects = [
     {
       title: "MediClinic Staff Management Portal",
@@ -102,22 +118,22 @@ const Projects = () => {
     }
   ];
 
-
+  
   const handleLoadMore = () => {
-    setVisibleCount(prevCount => prevCount + 6);
+    setVisibleCount(prevCount => prevCount + loadStep);
   };
 
   return (
-    <section id="projects" className="py-24 bg-black text-white relative">
-      <div className="max-w-7xl mx-auto px-8 md:px-16">
+    <section id="projects" className="py-16 lg:py-24 bg-black text-white relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
 
         {/* Main Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
+            className="text-3xl md:text-5xl font-bold tracking-tight uppercase"
           >
             Featured <span className="text-[#deff9a]">Projects.</span>
           </motion.h2>
@@ -128,14 +144,13 @@ const Projects = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
           ></motion.div>
-          <p className="text-gray-500 mt-6 font-light text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 mt-4 md:mt-6 font-light text-base md:text-lg max-w-2xl mx-auto">
             A showcase of my full-stack applications, mobile developments, and ongoing innovations.
           </p>
         </div>
 
         {/* 1. Completed Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {completedProjects.slice(0, visibleCount).map((project, index) => (
             <ProjectCard
               key={index}
@@ -149,12 +164,11 @@ const Projects = () => {
           ))}
         </div>
 
-
         {visibleCount < completedProjects.length && (
-          <div className="flex justify-center mb-24">
+          <div className="flex justify-center mb-16 md:mb-24">
             <button
               onClick={handleLoadMore}
-              className="bg-[#111] text-white border border-[#deff9a]/50 hover:bg-[#deff9a] hover:text-black hover:border-[#deff9a] px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-lg"
+              className="bg-[#111] text-white border border-[#deff9a]/50 hover:bg-[#deff9a] hover:text-black hover:border-[#deff9a] px-8 py-3 md:px-10 md:py-4 rounded-full text-sm md:text-base font-bold transition-all duration-300 shadow-lg"
             >
               See More Projects
             </button>
@@ -166,10 +180,10 @@ const Projects = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className={`pt-16 border-t border-gray-900 ${visibleCount >= completedProjects.length ? 'mt-24' : ''}`}
+          className={`pt-12 md:pt-16 border-t border-gray-900 ${visibleCount >= completedProjects.length ? 'mt-16 md:mt-24' : ''}`}
         >
-          <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-3xl font-bold text-white">What's <span className="text-gray-500">Next?</span></h3>
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">What's <span className="text-gray-500">Next?</span></h3>
             <div className="flex-grow h-px bg-gray-900"></div>
           </div>
 

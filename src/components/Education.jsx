@@ -6,26 +6,29 @@ import { motion } from "framer-motion";
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 bg-black text-white relativeSelection">
-      <div className="max-w-7xl mx-auto px-8 md:px-16">
+    
+    <section id="education" className="py-16 lg:py-24 bg-black text-white relativeSelection">
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         
-        <div className="text-center mb-20">
-  <motion.h2 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="text-4xl md:text-5xl font-bold tracking-tight uppercase"
-  >
-    Education & <span className="text-[#deff9a]">Qualifications.</span>
-  </motion.h2>
-  <motion.div 
-    initial={{ opacity: 0, width: 0 }}
-    whileInView={{ opacity: 1, width: "80px" }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.2, duration: 0.8 }}
-    className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
-  ></motion.div>
-</div>
+        
+        <div className="text-center mb-12 lg:mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+           
+            className="text-3xl md:text-5xl font-bold tracking-tight uppercase"
+          >
+            Education & <span className="text-[#deff9a]">Qualifications.</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "80px" }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
+          ></motion.div>
+        </div>
 
         {/* List of Education Items (Centered) */}
         <div className="space-y-6 max-w-5xl mx-auto">
@@ -44,7 +47,6 @@ const Education = () => {
             period="Present - 2023"
             description="Completed foundational studies in software development, programming logic, and practical application building."
           />
-
           <EducationItem 
             logo={rahulaLogo}
             institution="Rahula College, Matara"
@@ -52,7 +54,6 @@ const Education = () => {
             period="2019 - 2021"
             description="Successfully completed secondary education with a focus on technology, laying the foundational knowledge for a career in engineering."
           />
-
           
         </div>
 
