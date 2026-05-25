@@ -10,6 +10,7 @@ import CBCBank from "../assets/cbc.webp";
 import BurgerHouse from "../assets/burger house.webp"; 
 import BookClub from "../assets/the book club.webp"; 
 import MediClinicPatientPortal from "../assets/medi clinic patient portal.webp"; 
+import AuraApp from "../assets/aura app.webp";
 
 const Projects = () => {
 
@@ -100,7 +101,15 @@ const Projects = () => {
       techStack: ["React.js", "Tailwind CSS","Axios","Vite"],
       githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/mediclinic-patient-portal" }],
       liveLink: ""
-    }
+    },
+    {
+     title: "Aura - Intelligent Weather Companion",
+      description: "A visually stunning, smart weather application providing real-time global weather updates and precise forecasts. It features a premium dynamic glassmorphism UI that automatically adapts to live weather conditions, seamless GPS-based local tracking, worldwide city search, and smart local data persistence for a flawless user experience.",
+      image: AuraApp,
+      techStack: ["Flutter", "Riverpod","OpenWeather API","Geolocator"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/aura" }],
+      liveLink: ""
+    },
   ];
 
   const upcomingProjects = [
