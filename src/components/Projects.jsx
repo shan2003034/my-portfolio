@@ -11,6 +11,7 @@ import BurgerHouse from "../assets/burger house.webp";
 import BookClub from "../assets/the book club.webp"; 
 import MediClinicPatientPortal from "../assets/medi clinic patient portal.webp"; 
 import AuraApp from "../assets/aura app.webp";
+import WebhookSandbox from "../assets/webhook-sandbox.webp";
 
 const Projects = () => {
 
@@ -38,6 +39,14 @@ const Projects = () => {
   }, []);
 
   const completedProjects = [
+    {
+      title: "Webhook Sandbox - Local Testing Environment",
+      description: "A powerful, standalone developer tool designed to simulate and test webhook payloads entirely on localhost. It features a modern glassmorphism UI, persistent request history, dynamic status toggling, and runs securely as a single lightweight executable without requiring external tunneling tools for a seamless testing experience.",
+      image: WebhookSandbox,
+      techStack: ["Go", "React", "TypeScript", "Vite"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/webhook-sandbox" }],
+      liveLink: ""
+    },
     {
       title: "Leafy Lane E-Commerce",
       description: "A comprehensive organic food e-commerce web platform featuring a secure database, intuitive user interface, and integrated payment processing.",
