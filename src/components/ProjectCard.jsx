@@ -7,7 +7,7 @@ const ProjectCard = ({ project, onClick }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      // cursor-pointer එකතු කර ඇත
+      
       className="bg-[#111] rounded-3xl border border-gray-800 overflow-hidden hover:border-[#deff9a]/50 transition-all duration-500 group flex flex-col h-full cursor-pointer shadow-lg hover:shadow-[0_0_30px_rgba(222,255,154,0.1)]"
       onClick={() => onClick(project)}
     >
@@ -23,12 +23,12 @@ const ProjectCard = ({ project, onClick }) => {
       <div className="p-6 md:p-8 flex flex-col flex-grow">
         <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#deff9a] transition-colors line-clamp-2">{project.title}</h3>
         
-        {/* අකුරු පේළි 3කට පමණක් සීමා කර ඇත (line-clamp-3) */}
+        
         <p className="text-sm text-gray-400 font-light leading-relaxed flex-grow line-clamp-3 mb-6">
           {project.description}
         </p>
         
-        {/* View Details Text */}
+      
         <div className="mt-auto border-t border-gray-800 pt-4">
             <span className="text-[#deff9a] text-sm font-bold group-hover:underline flex items-center gap-2">
               View Details 

@@ -7,7 +7,6 @@ import { TbBrandHtml5, TbDeviceMobileCode, TbServer, TbDatabase, TbTools, TbRobo
 import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
-
   const skillCategories = [
     {
       title: "Frontend & Mobile",
@@ -68,21 +67,18 @@ const Skills = () => {
   ];
 
   return (
-    
     <section id="skills" className="py-16 lg:py-24 bg-[#050505] text-white relative overflow-hidden">
 
-      {/* Background Subtle Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#deff9a] rounded-full blur-[250px] opacity-[0.03] pointer-events-none"></div>
+     
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#deff9a] rounded-full blur-[300px] opacity-[0.02] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
 
-       
         <div className="text-center mb-12 lg:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            
             className="text-3xl md:text-5xl font-bold tracking-tight uppercase"
           >
             Technical <span className="text-[#deff9a]">Arsenal.</span>
@@ -92,7 +88,7 @@ const Skills = () => {
             whileInView={{ opacity: 1, width: "80px" }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="h-1.5 bg-[#deff9a] mt-4 mx-auto"
+            className="h-1.5 bg-gradient-to-r from-[#deff9a] to-[#c5f06a] mt-4 mx-auto rounded-full"
           ></motion.div>
         </div>
 
@@ -105,31 +101,37 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              
-              className={`bg-[#0a0a0a] border border-gray-800/50 rounded-3xl p-6 md:p-8 hover:border-[#deff9a]/30 transition-all duration-500 group ${category.colSpan}`}
+             
+              className={`relative overflow-hidden bg-[#0a0a0a]/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 hover:border-[#deff9a]/40 transition-all duration-500 group shadow-lg hover:shadow-[0_0_30px_rgba(222,255,154,0.1)] ${category.colSpan}`}
             >
               
-              <div className="flex items-center gap-4 mb-6 md:mb-8">
-                <div className="p-3 bg-[#111] rounded-2xl group-hover:bg-[#deff9a]/10 transition-colors">
-                  {category.icon}
-                </div>
              
-                <h3 className="text-xl md:text-2xl font-bold text-white">{category.title}</h3>
-              </div>
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#deff9a]/5 rounded-full blur-[60px] group-hover:bg-[#deff9a]/20 transition-all duration-700 pointer-events-none"></div>
 
-              {/* Skill Pills */}
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                {category.skills.map((skill, idx) => (
-                  <div
-                    key={idx}
-                   
-                    className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-[#111] border border-gray-800 rounded-full text-sm md:text-base text-gray-300 font-medium hover:text-black hover:bg-[#deff9a] hover:border-[#deff9a] hover:-translate-y-1 transition-all duration-300 cursor-default"
-                  >
-                    <span className="text-base md:text-lg group-hover:scale-110 transition-transform">{skill.icon}</span>
-                    <span>{skill.name}</span>
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-6 md:mb-8">
+                  <div className="p-3 bg-white/5 border border-white/10 rounded-2xl group-hover:bg-[#deff9a]/20 group-hover:border-[#deff9a]/50 transition-all duration-500 shadow-inner">
+                    {category.icon}
                   </div>
-                ))}
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#deff9a] transition-colors duration-300">
+                    {category.title}
+                  </h3>
+                </div>
+
+               
+                <div className="flex flex-wrap gap-2 md:gap-3">
+                  {category.skills.map((skill, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-white/5 border border-white/10 rounded-full text-sm md:text-base text-gray-300 font-medium hover:text-black hover:bg-gradient-to-r hover:from-[#deff9a] hover:to-[#c5f06a] hover:border-transparent hover:shadow-[0_0_15px_rgba(222,255,154,0.4)] hover:-translate-y-1 transition-all duration-300 cursor-default"
+                    >
+                      <span className="text-base md:text-lg mix-blend-luminosity hover:mix-blend-normal transition-all">{skill.icon}</span>
+                      <span>{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
+              
             </motion.div>
           ))}
         </div>

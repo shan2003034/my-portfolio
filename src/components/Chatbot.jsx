@@ -62,7 +62,7 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            /* පහළ Button එක නැති නිසා bottom-0 ලෙස වෙනස් කර ඇත */
+            
             className="absolute bottom-0 right-0 w-[calc(100vw-2rem)] sm:w-[380px] h-[70vh] sm:h-[550px] max-h-[600px] flex flex-col bg-[#0a0a0a]/70 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] overflow-hidden origin-bottom-right"
           >
             
@@ -70,7 +70,7 @@ const Chatbot = () => {
             <div className="px-5 py-4 flex justify-between items-center bg-white/5 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  {/* Icon එක වෙනුවට Image එක යොදා ඇත */}
+                 
                   <div className="w-10 h-10 rounded-full overflow-hidden bg-[#1a1a1a] flex items-center justify-center border border-[#deff9a]/30 shadow-[0_0_15px_rgba(222,255,154,0.15)]">
                     <img src={BotProfileImage} alt="AI Bot" className="w-full h-full object-cover" />
                   </div>
@@ -143,7 +143,7 @@ const Chatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Action Button (Chat එක Open නැති වෙලාවට විතරක් පෙන්වයි) */}
+      
       {!isOpen && (
         <motion.button
           whileHover={{ scale: 1.05 }}

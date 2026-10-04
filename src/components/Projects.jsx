@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import UpcomingProjectCard from "./UpcomingProjectCard";
-import ProjectModal from "./ProjectModal"; // අලුත් Modal එක මෙතනින් Import කර ඇත
+import ProjectModal from "./ProjectModal"; 
 
 import LeafyLaneEcommerce from "../assets/leafy lane  e commerce 2.webp"; 
 import LeafyLaneMcommerce from "../assets/leafy lane m commerce.webp"; 
@@ -22,7 +22,7 @@ const Projects = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [loadStep, setLoadStep] = useState(6);
   
-  // Modal එක පාලනය කිරීම සඳහා අලුත් State එක
+  
   const [selectedProject, setSelectedProject] = useState(null); 
 
   useEffect(() => {
@@ -167,16 +167,16 @@ const Projects = () => {
     setVisibleCount(prevCount => prevCount + loadStep);
   };
 
-  // Modal එක Open කරන Function එක
+  
   const openModal = (project) => {
     setSelectedProject(project);
-    document.body.style.overflow = "hidden"; // Pop-up එක ආවම පිටුපස Scroll වෙන එක නවත්වයි
+    document.body.style.overflow = "hidden"; 
   };
 
-  // Modal එක Close කරන Function එක
+ 
   const closeModal = () => {
     setSelectedProject(null);
-    document.body.style.overflow = "auto"; // ආපසු Scroll වෙන්න ඉඩ දෙයි
+    document.body.style.overflow = "auto"; 
   };
 
   return (
@@ -210,8 +210,8 @@ const Projects = () => {
           {completedProjects.slice(0, visibleCount).map((project, index) => (
             <ProjectCard
               key={index}
-              project={project} // සම්පූර්ණ project object එකම යවයි
-              onClick={openModal} // Click කළාම Modal එක Open වෙන්න යවයි
+              project={project} 
+              onClick={openModal} 
             />
           ))}
         </div>
