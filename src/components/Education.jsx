@@ -2,6 +2,7 @@ import EducationItem from "./EducationItem";
 import bcuLogo from "../assets/BCU logo.png"; 
 import rahulaLogo from "../assets/rahula collage logo.png"; 
 import JavaInsLogo from "../assets/java institute logo.png"; 
+import UKAwards from "../assets/ukawards.webp";
 import { motion } from "framer-motion";
 
 const Education = () => {
@@ -41,15 +42,29 @@ const Education = () => {
             description="Currently completing my final year of study, focusing on advanced software principles, full-stack application development, and modern architectural patterns. This degree is validated and awarded by Birmingham City University, UK."
           />
           <EducationItem 
+            logo={UKAwards}
+            institution="Skills & Education Group Awards (UK)"
+            qualification="Level 5 Professional Higher Diploma in Software Engineering"
+            period="August 2026"
+            description="Successfully completed the accredited Level 5 higher diploma, advancing knowledge in complex software engineering principles and application design."
+          />
+          <EducationItem 
+            logo={UKAwards}
+            institution="Skills & Education Group Awards (UK)"
+            qualification="Level 4 Professional Diploma in Software Engineering"
+            period="October 2025"
+            description="Successfully completed the accredited Level 4 diploma, establishing a strong foundation in core software development methodologies and programming concepts."
+          />
+          <EducationItem 
             logo={JavaInsLogo}
-            institution="Software Engineering Studies"
-            qualification="Java Institute for Advanced Technology"
+            institution="Java Institute for Advanced Technology"
+            qualification="Software Engineering Studies"
             period="Present - 2023"
             description="Completed foundational studies in software development, programming logic, and practical application building."
           />
           <EducationItem 
             logo={rahulaLogo}
-            institution="Rahula College, Matara"
+            institution="Rahula College Matara"
             qualification="G.C.E. Advanced Level (Technology Stream)"
             period="2019 - 2021"
             description="Successfully completed secondary education with a focus on technology, laying the foundational knowledge for a career in engineering."

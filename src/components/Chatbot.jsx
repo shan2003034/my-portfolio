@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { FaTimes, FaPaperPlane } from 'react-icons/fa'; 
 import { Player } from '@lottiefiles/react-lottie-player';
 import robotAnimation from '../assets/robot.json';
+
+
+import BotProfileImage from '../assets/chatbot.jpg'; 
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +14,12 @@ const Chatbot = () => {
     { role: "ai", content: "Hi! I'm Lakshan's AI Assistant. Ask me anything about his skills or projects!" }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isLoading]);
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -43,84 +52,110 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-50 flex flex-col items-end">
       
       {/* Chat Popup Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-             
-            className="bg-[#111] border border-gray-800 rounded-2xl w-[85vw] sm:w-96 shadow-2xl overflow-hidden mb-4 mr-2 sm:mr-16"
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            /* පහළ Button එක නැති නිසා bottom-0 ලෙස වෙනස් කර ඇත */
+            className="absolute bottom-0 right-0 w-[calc(100vw-2rem)] sm:w-[380px] h-[70vh] sm:h-[550px] max-h-[600px] flex flex-col bg-[#0a0a0a]/70 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] overflow-hidden origin-bottom-right"
           >
-           
-            <div className="bg-gray-900 px-4 py-3 flex justify-between items-center border-b border-gray-800">
-              <div className="flex items-center gap-2">
-                <FaRobot className="text-[#deff9a] text-xl" />
-                <span className="text-white font-semibold">AI Assistant</span>
+            
+            {/* Sleek Header */}
+            <div className="px-5 py-4 flex justify-between items-center bg-white/5 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  {/* Icon එක වෙනුවට Image එක යොදා ඇත */}
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-[#1a1a1a] flex items-center justify-center border border-[#deff9a]/30 shadow-[0_0_15px_rgba(222,255,154,0.15)]">
+                    <img src={BotProfileImage} alt="AI Bot" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-[#deff9a] rounded-full border-2 border-[#0a0a0a] animate-pulse"></div>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-sm">AI Assistant</h3>
+                  <p className="text-xs text-gray-400 font-light">Online & Ready</p>
+                </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white transition-colors">
-                <FaTimes />
+              <button 
+                onClick={() => setIsOpen(false)} 
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              >
+                <FaTimes/>
               </button>
             </div>
 
             {/* Messages Area */}
-            <div className="h-80 p-4 overflow-y-auto flex flex-col gap-3 scrollbar-thin scrollbar-thumb-gray-800">
+            <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               {messages.map((msg, index) => (
-                <div key={index} className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${msg.role === 'ai' ? 'bg-gray-800 text-gray-200 self-start rounded-tl-none' : 'bg-[#deff9a] text-black self-end rounded-tr-none font-medium'}`}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  key={index} 
+                  className={`max-w-[85%] px-4 py-3 text-sm leading-relaxed shadow-lg ${
+                    msg.role === 'ai' 
+                      ? 'bg-white/10 text-gray-200 self-start rounded-2xl rounded-tl-sm border border-white/5 backdrop-blur-md' 
+                      : 'bg-gradient-to-r from-[#deff9a] to-[#c5f06a] text-black self-end rounded-2xl rounded-tr-sm font-medium shadow-[0_4px_15px_rgba(222,255,154,0.2)]'
+                  }`}
+                >
                   {msg.content}
-                </div>
+                </motion.div>
               ))}
+              
+              {/* Typing Indicator */}
               {isLoading && (
-                <div className="bg-gray-800 text-gray-400 text-xs px-4 py-2 self-start rounded-2xl rounded-tl-none animate-pulse">
-                  Typing...
-                </div>
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="bg-white/10 border border-white/5 backdrop-blur-md self-start rounded-2xl rounded-tl-sm px-4 py-4 flex gap-1.5 items-center shadow-lg"
+                >
+                  <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                  <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                  <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                </motion.div>
               )}
+              <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Form */}
-            <form onSubmit={handleSend} className="p-3 border-t border-gray-800 flex gap-2">
+            {/* Premium Input Form */}
+            <form onSubmit={handleSend} className="p-4 bg-white/5 border-t border-white/10 flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask something..."
-                className="flex-1 bg-gray-900 border border-gray-700 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-[#deff9a] transition-colors"
+                placeholder="Ask me anything..."
+                className="flex-1 bg-black/40 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#deff9a]/50 focus:bg-black/60 transition-all shadow-inner"
               />
               <button
                 type="submit"
-                disabled={isLoading}
-                className="bg-[#deff9a] text-black p-3 rounded-full hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100"
+                disabled={isLoading || !input.trim()}
+                className="bg-gradient-to-tr from-[#deff9a] to-[#c5f06a] text-black w-11 h-11 flex items-center justify-center rounded-full hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100 shadow-[0_0_15px_rgba(222,255,154,0.3)] flex-shrink-0"
               >
-                <FaPaperPlane className="text-sm" />
+                <FaPaperPlane className="text-sm ml-[-2px]"/>
               </button>
             </form>
+
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Floating Action Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center focus:outline-none z-50"
-      >
-        {isOpen ? (
-         
-          <div className="bg-[#deff9a] text-black w-14 h-14 rounded-full shadow-[0_0_20px_rgba(222,255,154,0.3)] flex items-center justify-center hover:shadow-[0_0_30px_rgba(222,255,154,0.5)] transition-shadow duration-300">
-            <FaTimes className="text-2xl" /> 
+      {/* Floating Action Button (Chat එක Open නැති වෙලාවට විතරක් පෙන්වයි) */}
+      {!isOpen && (
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsOpen(true)}
+          className="relative z-50 flex items-center justify-center focus:outline-none"
+        >
+          <div className="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-[0_0_15px_rgba(222,255,154,0.3)]">
+             <Player autoplay loop src={robotAnimation}/>
           </div>
-        ) : (
-         
-          
-          <div className="w-24 h-24 sm:w-40 sm:h-40 drop-shadow-[0_0_15px_rgba(222,255,154,0.3)]">
-             <Player autoplay loop src={robotAnimation}  />
-          </div>
-        )}
-      </motion.button>
+        </motion.button>
+      )}
 
     </div>
   );

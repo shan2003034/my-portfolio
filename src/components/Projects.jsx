@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import UpcomingProjectCard from "./UpcomingProjectCard";
+import ProjectModal from "./ProjectModal"; // අලුත් Modal එක මෙතනින් Import කර ඇත
+
 import LeafyLaneEcommerce from "../assets/leafy lane  e commerce 2.webp"; 
 import LeafyLaneMcommerce from "../assets/leafy lane m commerce.webp"; 
 import LeafyLaneMcommerceAdminPanel from "../assets/leafy lane admin panel.webp"; 
@@ -12,33 +14,52 @@ import BookClub from "../assets/the book club.webp";
 import MediClinicPatientPortal from "../assets/medi clinic patient portal.webp"; 
 import AuraApp from "../assets/aura app.webp";
 import WebhookSandbox from "../assets/webhook-sandbox.webp";
+import LogIq from "../assets/logiq.webp";
+import TechMart from "../assets/techmart.webp";
 
 const Projects = () => {
 
- 
   const [visibleCount, setVisibleCount] = useState(6);
   const [loadStep, setLoadStep] = useState(6);
+  
+  // Modal එක පාලනය කිරීම සඳහා අලුත් State එක
+  const [selectedProject, setSelectedProject] = useState(null); 
 
- 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        
         setVisibleCount(3);
         setLoadStep(3);
       } else {
-        
         setVisibleCount(6);
         setLoadStep(6);
       }
     };
 
-    
     handleResize();
 
   }, []);
 
   const completedProjects = [
+    {
+      title: "LogIQ - AI-Powered Observability Platform",
+      description: "An enterprise-grade observability and debugging platform designed to monitor microservices in real-time. LogIQ utilizes a high-performance Spring Boot 3 backend for secure JWT authentication and WebSocket-based telemetry streaming. The platform features a cyber-tech inspired Glassmorphism UI built with React and Tailwind CSS, providing real-time server health visualizations and integrating secure AI capabilities to generate automated code-fix suggestions for complex exceptions.",
+      image: LogIq,
+      techStack: ["React", "Tailwind CSS", "Spring Boot", "WebSockets", "MySQL"],
+      githubLinks: [
+        { name: "Frontend Repo", url: "https://github.com/shan2003034/logiq-frontend" },
+        { name: "Backend Repo", url: "https://github.com/shan2003034/logiq-backend" }
+      ],
+      liveLink: ""
+    },
+    {
+      title: "TechMart Online E-Commerce",
+      description: "An enterprise-grade e-commerce platform built on Jakarta EE 10 and Payara Server. It features asynchronous order processing via JMS, stateful cart management using EJBs, and real-time promotion broadcasts via WebSockets.",
+      image: TechMart,
+      techStack: ["Jakarta EE", "EJB & JMS", "Payara Server", "MySQL", "WebSocket"],
+      githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/TechMartOnline" }],
+      liveLink: ""
+    },
     {
       title: "Webhook Sandbox - Local Testing Environment",
       description: "A powerful, standalone developer tool designed to simulate and test webhook payloads entirely on localhost. It features a modern glassmorphism UI, persistent request history, dynamic status toggling, and runs securely as a single lightweight executable without requiring external tunneling tools for a seamless testing experience.",
@@ -88,7 +109,7 @@ const Projects = () => {
       liveLink: ""
     },
     {
-     title: "Burger House POS",
+      title: "Burger House POS",
       description: "A Point of Sale (POS) system built to handle sales processing and inventory management specifically for a bakery/fast-food shop.",
       image: BurgerHouse,
       techStack: ["Java Swing", "MySQL"],
@@ -96,7 +117,7 @@ const Projects = () => {
       liveLink: ""
     },
     {
-     title: "The Book Club",
+      title: "The Book Club",
       description: "An online bookstore and e-commerce application allowing users to browse, purchase, and manage book collections securely.",
       image: BookClub,
       techStack: ["PHP", "MySQL","HTML/CSS"],
@@ -104,7 +125,7 @@ const Projects = () => {
       liveLink: ""
     },
     {
-     title: "MediClinic - Patient Portal",
+      title: "MediClinic - Patient Portal",
       description: "A user-centric healthcare portal allowing patients to browse doctor specialties, check real-time availability, book channeling slots, download digital prescriptions, and securely view their medical history.",
       image: MediClinicPatientPortal,
       techStack: ["React.js", "Tailwind CSS","Axios","Vite"],
@@ -112,13 +133,13 @@ const Projects = () => {
       liveLink: ""
     },
     {
-     title: "Aura - Intelligent Weather Companion",
+      title: "Aura - Intelligent Weather Companion",
       description: "A visually stunning, smart weather application providing real-time global weather updates and precise forecasts. It features a premium dynamic glassmorphism UI that automatically adapts to live weather conditions, seamless GPS-based local tracking, worldwide city search, and smart local data persistence for a flawless user experience.",
       image: AuraApp,
       techStack: ["Flutter", "Riverpod","OpenWeather API","Geolocator"],
       githubLinks: [{ name: "GitHub Repo", url: "https://github.com/shan2003034/aura" }],
       liveLink: ""
-    },
+    }
   ];
 
   const upcomingProjects = [
@@ -136,9 +157,20 @@ const Projects = () => {
     }
   ];
 
-  
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + loadStep);
+  };
+
+  // Modal එක Open කරන Function එක
+  const openModal = (project) => {
+    setSelectedProject(project);
+    document.body.style.overflow = "hidden"; // Pop-up එක ආවම පිටුපස Scroll වෙන එක නවත්වයි
+  };
+
+  // Modal එක Close කරන Function එක
+  const closeModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = "auto"; // ආපසු Scroll වෙන්න ඉඩ දෙයි
   };
 
   return (
@@ -172,12 +204,8 @@ const Projects = () => {
           {completedProjects.slice(0, visibleCount).map((project, index) => (
             <ProjectCard
               key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              techStack={project.techStack}
-              githubLinks={project.githubLinks}
-              liveLink={project.liveLink}
+              project={project} // සම්පූර්ණ project object එකම යවයි
+              onClick={openModal} // Click කළාම Modal එක Open වෙන්න යවයි
             />
           ))}
         </div>
@@ -219,6 +247,13 @@ const Projects = () => {
         </motion.div>
 
       </div>
+
+      {/* Render the Modal */}
+      <ProjectModal 
+        isOpen={!!selectedProject} 
+        onClose={closeModal} 
+        project={selectedProject} 
+      />
     </section>
   );
 };
