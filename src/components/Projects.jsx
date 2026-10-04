@@ -144,6 +144,12 @@ const Projects = () => {
 
   const upcomingProjects = [
     {
+      title: "Apex Trust Bank",
+      category: "Finance & Enterprise System",
+      expectedDate: "Ongoing",
+      description: "An enterprise-level core banking management system designed exclusively for bank staff. It streamlines internal operations including loan processing, savings account management, pawning services, and staff administration using Spring Boot, React, and MySQL."
+    },
+    {
       title: "MediClinic Staff Management Portal",
       category: "Healthcare & Enterprise System",
       expectedDate: "Ongoing",

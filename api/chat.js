@@ -50,8 +50,10 @@ export default async function handler(req, res) {
               5. Leafy Lane M-Commerce (Java, Firebase, Google Maps)
               6. ZAP Chat App (React Native, WebSockets, MySQL)
               7. Aura - Intelligent Weather Companion (Flutter, Riverpod, OpenWeather API)
-              8. MediClinic - Patient Portal (React.js, Tailwind CSS)
-            
+              8. MediClinic  - Patient Portal (React.js, Tailwind CSS)
+              9. Apex Trust Bank (Upcoming) - An enterprise core banking and staff management system handling loans, savings, and pawning for internal staff. (React, Spring Boot, MySQL)
+              10. MediClinic Enterprise Backend Engine (Upcoming) - A secure RESTful API layer for clinic workflows with JWT auth and automatic queue generation.
+              11. Apex Trust Bank (Upcoming) - An enterprise core banking system for staff handling loans, savings, and pawning. (React, Spring Boot, MySQL)
             - Contact Information:
               * Phone / WhatsApp: 0705629772
               * Email: shangajanayake7@gmail.com
